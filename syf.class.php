@@ -99,13 +99,6 @@ if(!class_exists('syf')) {
 					'undeletable'	=> true,
 					'tolang'		=> true
 				),
-				'clan'	=> array(
-					'type'			=> 'text',
-					'category'		=> 'character',
-					'lang'			=> 'uc_clan',
-					'size'			=> 32,
-					'undeletable'	=> true,
-				),
 			);
 			return $xml_fields;
 		}
@@ -123,7 +116,17 @@ if(!class_exists('syf')) {
 			}
 		}
 
-		public function install($install=false){}
+		public function install($install=false){
+			$this->game->resetEvents();
+			$this->game->resetRanks();
+			//Ranks
+			$this->game->addRank(0, "Pantheon");
+			$this->game->addRank(1, "Clanleader");
+			$this->game->addRank(2, "Officer");
+			$this->game->addRank(3, "Veteran");
+			$this->game->addRank(4, "Member", true);
+			$this->game->addRank(5, "Unknown");
+		}
 		
 		//Guildbank
 		public function guildbank_money(){
