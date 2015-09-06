@@ -26,7 +26,7 @@ if ( !defined('EQDKP_INC') ){
 if(!class_exists('syf')) {
 	class syf extends game_generic {
 		protected static $apiLevel	= 20;
-		public $version				= '0.0.1';
+		public $version				= '0.0.2';
 		protected $this_game		= 'syf';
 		protected $types			= array('classes', 'filters', 'roles', 'clans');
 		protected $classes			= array();
